@@ -1,8 +1,0 @@
-{
-    "liveServer.settings.multiRootWorkspaceName": "latihanPHP",
-    "liveServer.settings.proxy": {
-        "enable": true,                             //   i. enabled
-        "baseUri": "/",                             //  ii. workspace
-        "proxyUri": "http://127.0.0.1:5500/" // iii. actual address
-    },
-}
