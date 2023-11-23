@@ -22,10 +22,13 @@ $wordToCheck = "dataKaryawan";
     <div class="hidden w-full md:block md:w-auto" id="navbar-default">
       <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
         <li>
-          <a href="" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent  md:p-0 dark:text-white hover:md:dark:text-blue-500" aria-current="page">Home</a>
+          <a href="../Insert/insertDataObat.php" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent  md:p-0 dark:text-white hover:md:dark:text-blue-500" aria-current="page">Obat</a>
         </li>
         <li>
-          <a href="../" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Views</a>
+          <a href="../Insert/insertDataPelanggan.php" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pelanggan</a>
+        </li>
+        <li>
+          <a href="../Insert/insertTransaksi.php" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Transaksi</a>
         </li>
         <li class="relative w-20">
            <?php
@@ -34,7 +37,7 @@ $wordToCheck = "dataKaryawan";
            <button onclick="myFunction()" class="dropbtn w-[40px] text-white">
            <?=@$_COOKIE['username'] ?>
            </button>
-           <div id="myDropdown" class="dropdown-content hidden absolute z-10 py-2 bg-white w-20 justify-center rounded-md border-blue-700 border-[2px]">
+           <div id="myDropdown" class="dropdown-content hidden absolute z-10 py-2 bg-red-500 w-20 justify-center rounded-md border-white border-[1px]">
               <a href="
               <?php 
         if (strpos($currentUri, $wordToCheck) !== false){
@@ -45,7 +48,7 @@ $wordToCheck = "dataKaryawan";
         }
         
         ?>
-              " class= "text-red-600 mx-auto block ml-1  ">Sign Out</a>
+              " class= "text-white mx-auto block ml-1  ">Sign Out</a>
           </div>
         </li>
         <?php
