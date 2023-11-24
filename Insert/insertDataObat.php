@@ -1,5 +1,4 @@
 <?php
-include '../connection.php';
 // if(!isset($_SESSION['username'])){
 //     header('Location: ../../users/login.php');
 // }
@@ -20,7 +19,6 @@ if(!isset($_COOKIE['username'])){
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body>
-    <?php include ('../component/navbar.php') ?>
 
     <!-- <h1 class="font-bold text-4xl my-4 text-center"> FORM OBAT OBATAN ASELI</h1> -->
     <!-- <div class="absolute w-[200px] h-[500px] left-20  flex flex-col gap-y-2 items-start justify-center">

@@ -4,7 +4,7 @@ if(!isset($_COOKIE['username'])){
 }
 
 
-include '../connection.php';
+// include '../connection.php';
 $id = $_GET['id'];
 
 $query = "DELETE FROM tbobat WHERE idObat = '$id'";

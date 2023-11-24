@@ -1,6 +1,6 @@
 <?php
-session_start();
-include '../connection.php';
+// session_start();
+// include '../connection.php';
 if(!isset($_COOKIE['username'])){
     header('Location: ../../users/login.php');
 }
@@ -16,54 +16,10 @@ if(!isset($_COOKIE['username'])){
         <link rel="stylesheet" href="style.css?=<?php echo time() ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://cdn.tailwindcss.com"></script>
-        <style>
-            .wrap {
-  position: relative;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin-right: 20px;
-}
-
-a {
-  color: #3862a0;
-  text-decoration: none;
-  position: relative;
-}
-
-.submenu {
-  overflow: hidden;
-  position: absolute;
-  top: 100%;
-  background-color: #3862a0;
-  width: 75px;
-  height: 0;
-  transition: height 0.3s ease-in-out;
-  display:flex;
-  flex-direction:column;
-}
-
-li:hover .submenu {
-  height: 80px;
-  border-radius: 4px;
-}
-.submenu a {
-  display: block;
-  margin: 5px 0; 
-  text-align:center;
-}
-
-        </style>
+      
     </head>
     <body>
-    <?php include ('../Component/navbar.php') ?>
-
+  
     <!-- <h1 class="font-bold text-4xl my-4 text-center"> FORM PELANGGAN FAVORIT ADMIN</h1>
 
        <form class="w-[480px] h-auto flex flex-col bg-green-300 py-6 px-8  rounded-sm m-auto gap-y-1" action="processDataPelanggan.php" method="POST" enctype="multipart/form-data">

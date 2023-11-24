@@ -1,5 +1,5 @@
 <?php
-include '../connection.php';
+// include '../connection.php';
 if(!isset($_COOKIE['username'])){
     header('Location: ../users/login.php');
 }
@@ -21,7 +21,6 @@ $datas = mysqli_query($connection, $query);
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body>
-    <?php include ('../component/navbar.php') ?>
 
     <section class="bg-gray-50 dark:bg-green-200 p-3 sm:p-5 h-full min-h-screen">
     <div class="mx-auto max-w-screen-2xl px-4 lg:px-12">

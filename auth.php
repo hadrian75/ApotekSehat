@@ -6,5 +6,5 @@ if(!isset($_COOKIE['username'])){
     header('Location: users/login.php');
 }
 else{
-    header('Location: Views/tampilDataObat.php');
+    header('Location: dashboard.php?page=obat');
 }

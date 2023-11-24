@@ -1,47 +1,112 @@
-<!DOCTYPE html>
-    <html lang="en">
+<?php include "connection.php" ?>
 
+<!DOCTYPE html>
+    <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Insert Transaksi</title>
-        <link rel="stylesheet" href="style.css">
+    <meta charset=  "utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="keteranganObat" content="">
+        <link rel="stylesheet" href="style.css?=<?php echo time() ?>">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <style>
+.wrap {
+  position: relative;
+}
+.wrap  li:nth-child(3) ul{
+max-height: 40px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+a {
+  color: #3862a0;
+  text-decoration: none;
+  position: relative;
+}
+
+.submenu {
+  overflow: hidden;
+  position: absolute;
+  top: 100%;
+  background-color: #3862a0;
+  width: 75px;
+  height: 0;
+  transition: height 0.3s ease-in-out;
+  display:flex;
+  flex-direction:column;
+  z-index: 100;
+  border-radius: 4px;
+
+}
+
+li:hover .submenu {
+  height: 80px;
+
+}
+.submenu a {
+  display: block;
+  margin: 5px 0; 
+  text-align:center;
+}
+
+        </style>
     </head>
     <body class="flex h-screen flex-col">
 <?php 
 session_start();
-include("../component/navbar-view.php");
+include("Component/navbar.php");
 
 switch(@$_GET['page']){
     case "obat":
-        include_once "Views/tampilDataObat.php";
+        include_once ("Views/tampilDataObat.php");
         break;
-    case "insert_obat":
-        include_once "Insert/insertDataObat.php";
+    case "insertDataObat":
+        include_once ("Insert/insertDataObat.php");
         break;
-    case "process_insert_obat":
-        include_once "Insert/processDataObat.php";
+    case "processInsertObat":
+        include_once ("Insert/processDataObat.php");
         break;
-    case "UpdateDataobat":
-        include_once "Update/updateDataObat.php";
+    case "updateDataObat":
+        include_once ("Update/updateDataObat.php");
         break;
-    case "process_Update_obat":
-        include_once "Update/processUpdateObat.php";
+    case "processUpdateObat":
+        include_once ("Update/processUpdateObat.php");
         break;
+
+
+
+    case "processDeleteObat":
+        include_once ("Delete/deleteDataObat.php");
+        break;
+    case "processDeletePelanggan":
+        include_once ("Delete/deleteDataPelanggan.php");
+        break;
+
+
+
 
 
     case "pelanggan":
-        include_once "Views/tampilDataPelanggan.php";
+        include_once ("Views/tampilDataPelanggan.php");
         break;
     case "insertDataPelanggan":
-        include_once "Update/insertDataPelanggan.php";
+        include_once "Insert/insertDataPelanggan.php";
         break;
     case "processDataPelanggan":
         include_once "Update/processDataPelanggan.php";
         break;
-    case "updatePelanggan":
-        include_once "Update/updatePelanggan.php";
-        break;
+
     case "processUpdatePelanggan":
         include_once "Update/processUpdatePelanggan.php";
         break;
@@ -52,7 +117,7 @@ switch(@$_GET['page']){
     case "processInsertTransaksi":
         include_once "Insert/processInsertTransaksi.php";
         break;
-    case "detail_transaksi":
+    case "detailTransaksi":
         include_once "Views/tampilDetailTransaksi.php";
         break;
 }
@@ -60,7 +125,6 @@ switch(@$_GET['page']){
 ?>
 
 
-<script src="https://cdn.tailwindcss.com"></script>
     </body>
 
 </html>
