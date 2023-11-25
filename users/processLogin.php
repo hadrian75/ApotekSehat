@@ -2,7 +2,7 @@
 include '../connection.php';
 
 if(isset($_COOKIE['username'])){
- header('Location: ../Views/tampilDataPelanggan.php');
+ header('Location:../dashboard.php?page=obat');
 }
 
 
@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
             setcookie('username', $username, time() + (60 * 60 * 24 * 5), '/');
             setcookie('levelUser', $accFetch["levelUser"], time() + (60 * 60 * 24 * 5), '/');
             $passErr == null;
-            header('Location: ../Views/tampilDataPelanggan.php');
+            header('Location: ../dashboard.php?page=landingPage');
 
        } else {
            $passErr = "Please Enter Your Password Correctly!";

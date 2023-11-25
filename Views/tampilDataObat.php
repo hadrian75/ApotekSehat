@@ -83,7 +83,7 @@ $datas = mysqli_query($connection, $query);
                             <th scope="col" class="px-4 py-3 ">Harga Beli </th>
                             <th scope="col" class="px-4 py-3 ">Stok Obat</th>
                             <th scope="col" class="px-4 py-3 ">Keterangan</th>
-                            <th scope="col" class="px-4 py-3 ">Action</th>
+                            <th scope="col" class="px-4 py-3 text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody>

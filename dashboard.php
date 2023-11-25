@@ -15,9 +15,11 @@
 .wrap {
   position: relative;
 }
-.wrap  li:nth-child(3) ul{
+/* .wrap  li:nth-child(3) ul{
 max-height: 40px;
-}
+} */
+
+
 
 ul {
   list-style: none;
@@ -35,7 +37,7 @@ a {
   position: relative;
 }
 
-.submenu {
+.submenu, .submenus {
   overflow: hidden;
   position: absolute;
   top: 100%;
@@ -50,14 +52,47 @@ a {
 
 }
 
+.userDashboardList .submenus{
+    width: 140px;
+}
+
 li:hover .submenu {
   height: 80px;
-
 }
-.submenu a {
+li:hover .submenus {
+  height: 100px;
+}
+
+.submenu a, .submenus a {
   display: block;
   margin: 5px 0; 
-  text-align:center;
+  padding-left: 6px;
+}
+.submenus a {
+    font-size: 14px;
+}
+
+img.coverBuku{
+    width: 144px;
+    object-fit: cover;
+}
+.previewImageUpload{
+    display: flex;
+    align-items: start;
+    position: relative;
+    flex-direction: column;
+}
+.previewImageUpload input[type='file']{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    z-index: 10000;
+}
+.previewImageUpload img{
+ width: 220px;
+ object-fit: cover;
+ z-index: 1;
 }
 
         </style>
@@ -83,20 +118,14 @@ switch(@$_GET['page']){
     case "processUpdateObat":
         include_once ("Update/processUpdateObat.php");
         break;
-
-
-
     case "processDeleteObat":
         include_once ("Delete/deleteDataObat.php");
         break;
+
+
     case "processDeletePelanggan":
         include_once ("Delete/deleteDataPelanggan.php");
         break;
-
-
-
-
-
     case "pelanggan":
         include_once ("Views/tampilDataPelanggan.php");
         break;
@@ -106,9 +135,24 @@ switch(@$_GET['page']){
     case "processDataPelanggan":
         include_once "Update/processDataPelanggan.php";
         break;
-
+    case "updateDataPelanggan":  
+        include_once ("Update/updateDataPelanggans.php");
+        break;
     case "processUpdatePelanggan":
         include_once "Update/processUpdatePelanggan.php";
+        break;
+
+
+    case "karyawan":
+        include_once ("Views/tampilDataKaryawan.php");
+        break;
+    case "insertDataKaryawan":
+        include_once "Insert/insertDataKaryawan.php";
+        break;
+    
+
+    case "insertLogin":
+        include_once ("Views/tampilDataKaryawan.php");
         break;
 
     case "insertTransaksi":
@@ -120,6 +164,34 @@ switch(@$_GET['page']){
     case "detailTransaksi":
         include_once "Views/tampilDetailTransaksi.php";
         break;
+
+
+        case "supplier":
+            include_once ("Views/tampilDataSupplier.php");
+            break;
+        case "insertDataSupplier":
+            include_once "Insert/insertDataSupplier.php";
+            break;
+        case "processDataSupplier":
+            include_once "Update/processDataSupplier.php";
+            break;
+        case "processUpdateSupplier":
+            include_once "Update/processUpdateSupplier.php";
+            break;
+    
+
+
+
+    case "adminDashboard":
+        include_once "admin/dashboardUsers.php";
+        break;
+    case "landingPage":
+        include_once "Views/landingPage.php";
+        break;
+
+
+
+    
 }
 
 ?>

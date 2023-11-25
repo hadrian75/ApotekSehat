@@ -1,8 +1,5 @@
 
 <?php
-$currentUri = $_SERVER['REQUEST_URI'];
-
-$wordToCheck = "dataKaryawan";
 
 ?>
 
@@ -36,9 +33,17 @@ $wordToCheck = "dataKaryawan";
        </ul>
         </li>
         <li>
-          <a href="dashboard.php?page=insertTransaksi" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Transaksi</a>
+          <a href="dashboard.php?page=transaksi" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Transaksi</a>
           <ul class="submenu bg-white"> 
          <li><a href="dashboard.php?page=insertTransaksi" class="hover:text-blue-700 text-black">Insert</a></li>
+         <li><a href="dashboard.php?page=transaksi" class="hover:text-blue-700 text-black">Views</a></li>
+       </ul>
+        </li>
+        <li>
+          <a href="dashboard.php?page=supplier" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Supplier</a>
+          <ul class="submenu bg-white"> 
+         <li><a href="dashboard.php?page=insertDataSupplier" class="hover:text-blue-700 text-black">Insert</a></li>
+         <li><a href="dashboard.php?page=supplier" class="hover:text-blue-700 text-black">Views</a></li>
        </ul>
         </li>
         <li class="relative w-20">
@@ -48,24 +53,19 @@ $wordToCheck = "dataKaryawan";
            <?=@$_COOKIE['username'] ?>
            </button>
            <div id="myDropdown" class="dropdown-content hidden absolute z-10 py-2 bg-red-500 w-20 justify-center rounded-md border-white border-[1px]">
-              <a href="
-              <?php 
-        if (strpos($currentUri, $wordToCheck) !== false){
-          echo "../../users/logout.php";
-        }
-        else{
-          echo "../users/logout.php";
-        }
-        
-        ?>
-              " class= "text-white mx-auto block ml-1  ">Sign Out</a>
+              <a href="users/logout.php" class= "text-white mx-auto block ml-1  ">Sign Out</a>
           </div>
         </li>
         <?php
         if(@$_COOKIE['levelUser'] == "admin"){
         ?>
-        <li class="relative w-30">
-        <a href="../admin/dashboardUsers.php" class="text-red-600">Dashboard <?php if(@$_COOKIE['levelUser'] == "admin"){ echo "Admin";} else {echo "";}?></a>
+        <li class="relative w-30 userDashboardList">
+        <a href="dashboard.php?page=adminDashboard" class="text-red-600">Dashboard <?php if(@$_COOKIE['levelUser'] == "admin"){ echo "Admin";} else {echo "";}?></a>
+        <ul class="submenus bg-white"> 
+         <li><a href="dashboard.php?page=adminDashboard" class="hover:text-blue-700 text-black">User Regist</a></li>
+        <li><a href="dashboard.php?page=insertDataKaryawan" class="hover:text-blue-700 text-black">Insert Karyawan</a></li>
+        <li><a href="dashboard.php?page=karyawan" class="hover:text-blue-700 text-black">Karyawan</a></li>
+       </ul>
         </li>
      <?php } ?>
       </ul>

@@ -55,9 +55,13 @@ if(!isset($_COOKIE['username'])){
     <section class="bg-white dark:bg-gray-900">
     <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
         <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Tambah Pelanggan Baru</h2>
-        <form class="" action="processDataPelanggan.php" method="POST" enctype="multipart/form-data">
+        <form class="" action="processDataPelanggan.php" method="POST" accept="image/*" enctype="multipart/form-data">
           <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
-            
+          <div class="previewImageUpload w-full">
+           <img src="assets/img/default.png" alt="" class="max-w-[180px]" id="imageUpload">
+             <input type="file" name="coverBuku" id="uploadCover" class="max-w-[180px] max-h-[270px]">
+             <label for="uploadCover" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Upload Photo</label>
+        </div>
             <div class="sm:col-span-2">
                 <label for="namaPelanggan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Lengkap</label>
                 <input type="text" id="namaPelanggan" name="namaPelanggan" class="bg-gray-50 border border-blue-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-200 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Masukan Nama Pelanggan" required="">
@@ -70,10 +74,7 @@ if(!isset($_COOKIE['username'])){
                 <label for="nomorPelanggan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nomor Telepon</label>
                 <input type="text" id="nomorPelanggan" name="nomorPelanggan" class="bg-gray-50 border border-blue-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-200 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Masukan Nomor Telepon Pelanggan" required="">
             </div>
-            <div class="w-full">
-                <label for="buktiFoto" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Bukti Foto Resep</label>
-                <input type="file" id="buktiFoto" name="buktiFoto" class="bg-gray-50 border border-blue-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-200 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Masukan Bukti Foto Resep" required="">
-            </div>
+            
             <div class="sm:col-span-2">
                 <label for="alamatPelanggan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alamat</label>
                 <textarea rows="4" id="alamatPelanggan" name="alamatPelanggan" class="bg-gray-50 border border-blue-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-200 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Masukan Alamat Pelanggan" required=""></textarea>
@@ -82,9 +83,16 @@ if(!isset($_COOKIE['username'])){
                 <button type="submit" class=" inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800 max-w-[7rem]">
                     Submit
                 </button>
+                
         </form>
     </div>
 </section>
-
+<script>
+         document.getElementById("uploadCover").onchange = function(){
+    var fileName = uploadCover.files[0].name;
+document.querySelector("label[for='uploadCover']").innerText = "Uploaded: " + fileName;
+        document.getElementById("imageUpload").src = URL.createObjectURL(uploadCover.files[0]); // Preview new image
+      }
+       </script>
     </body>
 </html>
