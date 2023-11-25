@@ -73,7 +73,7 @@ $executeQuery = mysqli_query($connection, $queryKaryawan);
                 </td>
 
                 <td class="px-6 py-4">
-                    <a href="../users/register.php?id=<?=$data['idKaryawan']?>" class="text-white">
+                    <a href="dashboard.php?page=register&id=<?=$data['idKaryawan']?>" class="text-white">
                              <button class="px-4 py-2 w-full  bg-blue-500 rounded-md hover:bg-blue-600">
                              Register
                       </button>

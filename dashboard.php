@@ -185,6 +185,9 @@ switch(@$_GET['page']){
     case "adminDashboard":
         include_once "admin/dashboardUsers.php";
         break;
+    case "register":
+        include_once "users/register.php";
+        break;
     case "landingPage":
         include_once "Views/landingPage.php";
         break;

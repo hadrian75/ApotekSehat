@@ -1,24 +1,14 @@
 <?php
-include '../connection.php';
+// include '../connection.php';
 
 @$idKaryawan = $_GET['id'];
 
-// if(isset($_SESSION['username'])){
-//     if(@$_SESSION['levelUser'] != "admin"){
-//         header("../index.php");
-//     }
-// }
 
-// if(!isset($_COOKIE['username'])){
-//     header('Location: ../../users/login.php');
-// }
-// else{
-//     if(isset($_COOKIE['username'])){
-//         if(@$_COOKIE['levelUser'] != "admin"){
-//             header("../index.php");
-//         }
-//     }
-// }
+    if(isset($_COOKIE['username'])){
+        if(@$_COOKIE['levelUser'] != "admin"){
+            header("dashboard.php?page=landingPage");
+        }
+    }
 ?>
 <!DOCTYPE html>
 
@@ -34,13 +24,9 @@ include '../connection.php';
 
         
     </head>
-    <body class="bg-gray-50 dark:bg-gray-900 w-[100%] fixed">
-        <?php include ('../component/navbar.php') ;
-        ?>
-    
-    <!-- <h1 class="font-bold text-4xl my-4 text-center"> REGISTER MENJADI BUDAK KORPORAT TERBAIK</h1> -->
-<div class=" flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 bg-black">
-<form class="w-[480px] h-auto flex flex-col dark:border text-white gap-y-5 px-10 py-4 dark:bg-gray-800 dark:border-gray-700  m-auto rounded-md mt-[120px]" action="processRegister.php <?php if(isset($idKaryawan) || $idKaryawan != null) { echo "?id=<?=$idKaryawan?>";}?>" method="POST" enctype="multipart/form-data">
+    <body class="bg-gray-50 dark:bg-gray-900  fixed">
+<div class=" flex flex-col px-6 py-8 mx-auto md:h-screen lg:py-0 bg-black w-full">
+<form class="w-[480px] h-auto flex flex-col dark:border text-white gap-y-5 px-10 py-4 dark:bg-gray-800 dark:border-gray-700  m-auto rounded-md mt-[120px]" action="users/processRegister.php?<?php if(isset($idKaryawan) || $idKaryawan != null) { echo "id=$idKaryawan";}?>" method="POST" enctype="multipart/form-data">
 <h2 class="text-center font-semibold text-xl">Form Buat Akun Login</h2>
  
  <div>
@@ -62,7 +48,9 @@ include '../connection.php';
     <option value="admin">Admin</option>
 </Select>
 </div>
-<button type="submit" class="bg-gray-700 p-2  text-white rounded-md mt-10 block mx-auto">Kirimkan data</button>
+<button class="px-4 py-2 w-32 mx-auto bg-blue-500 rounded-md hover:bg-blue-600">
+   Register 
+</button>
 </form>
 </div>    
         <script src="" async defer></script>

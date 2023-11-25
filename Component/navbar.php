@@ -46,20 +46,10 @@
          <li><a href="dashboard.php?page=supplier" class="hover:text-blue-700 text-black">Views</a></li>
        </ul>
         </li>
-        <li class="relative w-20">
-           <?php
-           ?>
-           <button onclick="myFunction()" class="dropbtn w-[40px] text-white">
-           <?=@$_COOKIE['username'] ?>
-           </button>
-           <div id="myDropdown" class="dropdown-content hidden absolute z-10 py-2 bg-red-500 w-20 justify-center rounded-md border-white border-[1px]">
-              <a href="users/logout.php" class= "text-white mx-auto block ml-1  ">Sign Out</a>
-          </div>
-        </li>
         <?php
         if(@$_COOKIE['levelUser'] == "admin"){
         ?>
-        <li class="relative w-30 userDashboardList">
+        <li class="relative userDashboardList">
         <a href="dashboard.php?page=adminDashboard" class="text-red-600">Dashboard <?php if(@$_COOKIE['levelUser'] == "admin"){ echo "Admin";} else {echo "";}?></a>
         <ul class="submenus bg-white"> 
          <li><a href="dashboard.php?page=adminDashboard" class="hover:text-blue-700 text-black">User Regist</a></li>
@@ -67,7 +57,18 @@
         <li><a href="dashboard.php?page=karyawan" class="hover:text-blue-700 text-black">Karyawan</a></li>
        </ul>
         </li>
-     <?php } ?>
+        <?php } ?>
+        <li class="relative max-w-[1px] text-red-600">|</li>
+        <li class="relative w-20">
+           <?php
+           ?>
+           <button onclick="myFunction()" class="dropbtn w-[40px] text-blue-500">
+           <?=@$_COOKIE['username'] ?>
+           </button>
+           <div id="myDropdown" class="dropdown-content hidden absolute z-10 py-2 bg-red-500 w-20 justify-center rounded-md border-white border-[1px]">
+              <a href="users/logout.php" class= "text-white mx-auto block ml-1  ">Sign Out</a>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
