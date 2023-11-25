@@ -1,4 +1,6 @@
-<?php include "connection.php" ?>
+<?php include "connection.php";
+session_start();
+?>
 
 <!DOCTYPE html>
     <html>
@@ -99,8 +101,7 @@ img.coverBuku{
     </head>
     <body class="flex h-screen flex-col">
 <?php 
-session_start();
-include("Component/navbar.php");
+include_once "Component/navbar.php";
 
 switch(@$_GET['page']){
     case "obat":
@@ -133,7 +134,7 @@ switch(@$_GET['page']){
         include_once "Insert/insertDataPelanggan.php";
         break;
     case "processDataPelanggan":
-        include_once "Update/processDataPelanggan.php";
+        include_once "Insert/processDataPelanggan.php";
         break;
     case "updateDataPelanggan":  
         include_once ("Update/updateDataPelanggans.php");
@@ -173,7 +174,7 @@ switch(@$_GET['page']){
             include_once "Insert/insertDataSupplier.php";
             break;
         case "processDataSupplier":
-            include_once "Update/processDataSupplier.php";
+            include_once "Insert/processDataSupplier.php";
             break;
         case "processUpdateSupplier":
             include_once "Update/processUpdateSupplier.php";
@@ -198,8 +199,6 @@ switch(@$_GET['page']){
 }
 
 ?>
-
-
     </body>
 
 </html>

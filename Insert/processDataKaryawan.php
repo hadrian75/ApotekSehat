@@ -1,23 +1,19 @@
 <?php
 
-include '../../connection.php';
-session_start();
+include '../connection.php';
 if(!isset($_COOKIE['username'])){
-    header('Location: ../../users/login.php');
+    header('Location: ../users/login.php');
 }
-$namaKaryawan = $_POST['namaKaryawan'];
-$nomorKaryawan = $_POST['nomorKaryawan'];
-$alamatKaryawan = $_POST['alamatKaryawan'];
+$namaKaryawan = mysqli_real_escape_string($connection, $_POST['namaKaryawan']);
+$nomorKaryawan = mysqli_real_escape_string($connection, $_POST['nomorKaryawan']);
+$alamatKaryawan = mysqli_real_escape_string($connection, $_POST['alamatKaryawan']);
 
 
-
-// $query = "INSERT INTO tbobat('idObat','idSupplier','namaObat','kategoriObat','hargaJual','hargaBeli','stokObat','keterangan') VALUES('$idObat','$idSupplier','$namaObat','$kategoriObat','$hargaJual','$hargaBeli','$stokObat','$keteranganObat')";
-$query = "INSERT INTO tbobat VALUES('','$namaKaryawan', '$nomorKaryawan','$alamatKaryawan')";
-// $queryDuplicate = "SELECT idObat FROM tbobat WHERE idObat = '$idObat'";
+$query = "INSERT INTO tbkaryawan VALUES(NULL,'$namaKaryawan','$alamatKaryawan','$nomorKaryawan')";
 
 if(mysqli_query($connection, $query)){
  echo ' <h1 class="text-xl font-bold ml-auto mr-auto"> INPUTED DATA </h1> ';
- header("Location:../../Views/tampilDataKaryawan.php");
+ header("refresh:3,url=../dashboard.php?page=karyawan");
  exit;
 }
 ?>

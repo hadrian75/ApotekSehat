@@ -1,7 +1,4 @@
 
-<?php
-
-?>
 
 <nav class="bg-white border-gray-200 dark:bg-gray-900">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -60,10 +57,9 @@
         <?php } ?>
         <li class="relative max-w-[1px] text-red-600">|</li>
         <li class="relative w-20">
-           <?php
-           ?>
+
            <button onclick="myFunction()" class="dropbtn w-[40px] text-blue-500">
-           <?=@$_COOKIE['username'] ?>
+           <?=@$_COOKIE['username']?>
            </button>
            <div id="myDropdown" class="dropdown-content hidden absolute z-10 py-2 bg-red-500 w-20 justify-center rounded-md border-white border-[1px]">
               <a href="users/logout.php" class= "text-white mx-auto block ml-1  ">Sign Out</a>

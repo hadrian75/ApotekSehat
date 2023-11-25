@@ -17,6 +17,7 @@ $extension = pathinfo($buktiFoto, PATHINFO_EXTENSION);
             $query = "INSERT INTO tbPelanggan VALUES('','$namaPelanggan', '$alamat','$nomorTelepon','$usia','$newBuktiFoto')";
             if(mysqli_query($connection,  $query)){
              echo ' <h1 class="text-xl font-bold ml-auto mr-auto"> INPUTED DATA </h1> ';
+             header("refresh:3,url=../dashboard.php?page=pelanggan");
              exit;
             }
 

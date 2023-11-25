@@ -2,7 +2,7 @@
 // session_start();
 // include '../connection.php';
 if(!isset($_COOKIE['username'])){
-    header('Location: ../../users/login.php');
+    header('Location:users/login.php');
 }
 ?>
 <!DOCTYPE html>
