@@ -163,6 +163,9 @@ switch(@$_GET['page']){
     case "detailTransaksi":
         include_once "Views/tampilDetailTransaksi.php";
         break;
+    case "transaksi":
+        include_once "Views/tampilTransaksi.php";
+        break;
 
 
         case "supplier":
