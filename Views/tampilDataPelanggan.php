@@ -72,7 +72,7 @@ $datas = mysqli_query($connection, $query);
                             <th scope="col" class="px-4 py-3 ">Nomor Telepon</th>
                             <th scope="col" class="px-4 py-3 ">Usia</th>
                             <th scope="col" class="px-4 py-3 ">Foto Resep Obat</th>
-                            <th scope="col" class="px-4 py-3 text-center">Action</th>
+                            <th scope="col" class="px-4 py-3 text-center <?php if($_COOKIE['levelUser'] != "admin" ){ echo "hidden";}?>">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -90,12 +90,12 @@ $datas = mysqli_query($connection, $query);
                                 <td class="px-4 py-3 ">
                                 <img class=" object-contain w-24 h-24" src="img/resep/<?=$data['buktiFotoResep']?>" alt="">
                                 </td>
-                            <td class="px-3 py-3 flex  gap-2 items-center justify-center">
+                            <td class="px-3 py-3 flex  gap-2 items-center justify-center <?php if($_COOKIE['levelUser'] != "admin" ){ echo "hidden";}?>">
                             <button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5  dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
-                                <a href="dashboard.php?page=deleteDataPelanggan&id=<?=$data['idPelanggan'] ?>">Edit</a>
-                         </button>
-                         <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5  dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
-                         <a href="dashboard.php?page=updateDataPelanggan&id=<?=$data['idPelanggan']?>">Delete</a>
+                                <a href="dashboard.php?page=updateDataPelanggan&id=<?=$data['idPelanggan']?>">Edit</a>
+                            </button>
+                            <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5  dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                             <a href="dashboard.php?page=deleteDataPelanggan&id=<?=$data['idPelanggan'] ?>">Delete</a>
                         </button>
                         </td>
                         </tr>

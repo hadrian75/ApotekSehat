@@ -1,5 +1,7 @@
-<?php include "connection.php";
+<?php 
+include "connection.php";
 session_start();
+ob_start();
 ?>
 
 <!DOCTYPE html>
@@ -8,21 +10,14 @@ session_start();
     <meta charset=  "utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title></title>
-        <meta name="keteranganObat" content="">
+        <meta name="" content="">
         <link rel="stylesheet" href="style.css?=<?php echo time() ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://cdn.tailwindcss.com"></script>
-
         <style>
 .wrap {
   position: relative;
 }
-/* .wrap  li:nth-child(3) ul{
-max-height: 40px;
-} */
-
-
-
 ul {
   list-style: none;
   padding: 0;
@@ -101,7 +96,7 @@ img.coverBuku{
     </head>
     <body class="flex h-screen flex-col">
 <?php 
-include_once "Component/navbar.php";
+include ("Component/navbar.php");
 
 switch(@$_GET['page']){
     case "obat":
@@ -137,7 +132,7 @@ switch(@$_GET['page']){
         include_once "Insert/processDataPelanggan.php";
         break;
     case "updateDataPelanggan":  
-        include_once ("Update/updateDataPelanggans.php");
+        include_once ("Update/updateDataPelanggan.php");
         break;
     case "processUpdatePelanggan":
         include_once "Update/processUpdatePelanggan.php";
@@ -149,6 +144,9 @@ switch(@$_GET['page']){
         break;
     case "insertDataKaryawan":
         include_once "Insert/insertDataKaryawan.php";
+        break;
+    case "updateDataKaryawan":
+        include_once "Update/updateDataKaryawan.php";
         break;
     
 
@@ -176,6 +174,9 @@ switch(@$_GET['page']){
         case "processDataSupplier":
             include_once "Insert/processDataSupplier.php";
             break;
+        case "updateDataSupplier":
+            include_once "Update/updateDataSupplier.php";
+            break;
         case "processUpdateSupplier":
             include_once "Update/processUpdateSupplier.php";
             break;
@@ -192,13 +193,7 @@ switch(@$_GET['page']){
     case "landingPage":
         include_once "Views/landingPage.php";
         break;
-
-
-
-    
-}
-
-?>
+} ?>
     </body>
 
 </html>

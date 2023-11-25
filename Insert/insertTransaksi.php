@@ -1,12 +1,17 @@
-<?php
-// include '../connection.php';
+<!DOCTYPE html>
 
-if(!isset($_COOKIE['username'])){
-    header('Location: ../users/login.php');
-}
-?>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
 
-    <section class="bg-white dark:bg-gray-900">
+         <section class="bg-white dark:bg-gray-900">
     <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
         <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Tambah Transaksi</h2>
         <form action="#" method="POST">
@@ -15,8 +20,8 @@ if(!isset($_COOKIE['username'])){
                     <label for="kategoripelanggan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kategori Pelanggan</label>
                     <select name="kategoripelanggan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-200 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 cursor-pointer">
                         <option selected>Pilih Kategori Pelanggan</option>
-                        <option value="Umum">Umum</option>
-                        <option value="Khusus">Khusus</option>
+                        <option value="Umum" <?php if(@$_POST["kategoripelanggan"] == "Umum"){ echo "selected";}?>>Umum</option>
+                        <option value="Khusus" <?php if(@$_POST["kategoripelanggan"] == "Khusus"){ echo "selected";}?>>Khusus</option>
                     </select>
                 </div>
                 <div class="col-span-1">
@@ -29,7 +34,7 @@ if(!isset($_COOKIE['username'])){
         <?php
         if (@$_POST["kategoripelanggan"] == 'Khusus') {
             ?>
-            <form action=" Insert/processInsertTransaksi?kategoripelanggan=Khusus" method="POST">
+            <form action="dashboard.php?page=processInsertTransaksi&kategoripelanggan=Khusus" method="POST">
             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
             <div class="col-span-2">
                     <label for="tanggal" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tanggal</label>
@@ -54,8 +59,12 @@ if(!isset($_COOKIE['username'])){
             </form>
             <?php
         } elseif (@$_POST["kategoripelanggan"] == 'Umum'){
-            header('refresh:2, url=processInsertTransaksi?kategoripelanggan=Umum');
+            header('refresh:2, url= dashboard.php?page=processInsertTransaksi?kategoripelanggan=Umum');
         }
         ?>
     </div>
 </section>
+        <script src="" async defer></script>
+    </body>
+</html>
+   

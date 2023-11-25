@@ -21,6 +21,7 @@ if (isset($_POST['submit'])) {
         if (password_verify($pass, $accFetch['pass'])) {
             setcookie('username', $username, time() + (60 * 60 * 24 * 5), '/');
             setcookie('levelUser', $accFetch["levelUser"], time() + (60 * 60 * 24 * 5), '/');
+            setcookie('idKaryawan', $accFetch["idKaryawan"], time() + (60 * 60 * 24 * 5), '/');
             $passErr == null;
             header('Location: ../dashboard.php?page=landingPage');
 

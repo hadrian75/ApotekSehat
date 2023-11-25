@@ -56,7 +56,7 @@ if(isset($_POST['submit'])){
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body>
-    <section class="bg-white dark:bg-gray-900 w-full h-full ">
+    <section class="bg-white dark:bg-gray-900 w-full ">
   <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
       <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Medicine Editing</h2>
       <form action="" method="POST" enctype="multipart/form-data">
@@ -80,7 +80,7 @@ if(isset($_POST['submit'])){
               </div>
               <div class="sm:col-span-2">
                 <label for="buktiResep" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Foto Resep</label>
-              <img src="../img/resep/<?=$data['buktiFotoResep']?>" alt="" class=" object-cover w-22 h-52 py-2"id="buktiResep">
+              <img src="img/resep/<?php echo $data['buktiFotoResep']?>" alt="" class=" object-cover w-22 h-52 py-2"id="buktiResep">
        <input type="file" name="buktiFoto" id="uploadBukti">
     
               </div>
